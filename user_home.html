@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home Page</title>
+    <link rel="stylesheet" href="user_home.css">
+</head>
+<body>
+    <div class="header">
+        <img src="https://appexchange.salesforce.com/partners/servlet/servlet.FileDownload?file=00P3A00000kGyTnUAK">
+        <h1>LiteraLink</h1>
+    </div>
+        <div class="navbar">
+            <a href="profile.html"><p><i class="fa-solid fa-user"></i> Profile</p></a>
+            <a href="borrowed_books.html"><p><i class="fa-solid fa-book"></i> Borrowed Books</p></a>
+            <a href="return_dates.html"><p><i class="fa-solid fa-calendar"></i> Return Dates</p></a>
+            <a href="due_books.html"><p><i class="fa-solid fa-clock"></i> Due Books</p></a>
+            <a href="settings.html"><p><i class="fa-solid fa-gear"></i> Settings</p></a>
+            <a href="index.html"><p><i class="fa-solid fa-sign-out"></i> Logout</p></a>
+        </div>
+
+    <div class="backgroundimage">
+        <img src="bg.jpg" alt="searchimage">
+        <div class="nav-search">
+            <input placeholder="Search books, authors, topics..." class="search-input">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-container">
+        <button class="arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
+        <div class="carousel">
+            <div class="card">
+                <img src="https://cdn.wallpapersafari.com/47/95/3Lwnjz.jpg" alt="Mathematics">
+                <h3>Mathematics</h3>
+                <ul>
+                    <li>Algebra</li>
+                    <li>Calculus</li>
+                    <li>Statistics</li>
+                </ul>
+                <div class="maths">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://media.wired.com/photos/5f4ee313bb023d54b55e4e29/master/w_2560%2Cc_limit/sci-fi-last-lines.jpg" alt="Fiction">
+                <h3>Fiction</h3>
+                <ul>
+                    <li>Historical</li>
+                    <li>Fantasy</li>
+                    <li>Science Fiction</li>
+                </ul>
+                <div class="fiction">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/006/618/large_2x/science-background-illustration-scientific-design-flasks-glass-and-chemistry-physics-elements-generative-ai-photo.jpeg" alt="Science">
+                <h3>Science</h3>
+                <ul>
+                    <li>Physics</li>
+                    <li>Chemistry</li>
+                    <li>Biology</li>
+                </ul>
+                <div class="science">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://www.rd.com/wp-content/uploads/2021/04/50-Rarely-Seen-Photos_Feature-Image.jpg?resize=1536" alt="History">
+                <h3>History</h3>
+                <ul>
+                    <li>World History</li>
+                    <li>Ancient Civilizations</li>
+                    <li>Modern Era</li>
+                </ul>
+                <div class="history">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="http://images.huffingtonpost.com/2016-05-06-1462539856-7174175-6358850986901693652109630270_TECHTRENDS.jpg" alt="Technology">
+                <h3>Technology</h3>
+                <ul>
+                    <li>AI</li>
+                    <li>Robotics</li>
+                    <li>Cybersecurity</li>
+                </ul>
+                <div class="technology">
+                <a href="technology.html">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://yt3.ggpht.com/a/AATXAJzMmM4bgfhe-u0K-KK4Qs5Nnx7v1vFGlG0aNt5S=s900-c-k-c0xffffffff-no-rj-mo" alt="Psychology">
+                <h3>Psychology</h3>
+                <ul>
+                    <li>Cognitive</li>
+                    <li>Behavioral</li>
+                    <li>Clinical</li>
+                </ul>
+                <div class="psychology">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.fnVLeiw6FkFjabpEdZb7eQHaEg&pid=Api&P=0&h=180" alt="Business">
+                <h3>Business</h3>
+                <ul>
+                    <li>Marketing</li>
+                    <li>Finance</li>
+                    <li>Management</li>
+                </ul>
+                <div class="business">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.LI2mpSJDjYDhM3SL0vWcjQHaDP&pid=Api&P=0&h=180" alt="Law">
+                <h3>Law</h3>
+                <ul>
+                    <li>Criminal Law</li>
+                    <li>Civil Law</li>
+                    <li>Constitutional Law</li>
+                </ul>
+                <div class="law">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://wallpaperaccess.com/full/624185.jpg" alt="Medical Sciences">
+                <h3>Medical Sciences</h3>
+                <ul>
+                    <li>Anatomy</li>
+                    <li>Physiology</li>
+                    <li>Pharmacology</li>
+                </ul>
+                <div class="medical">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://wallpapercave.com/wp/wp4782956.jpg" alt="Travel & Tourism">
+                <h3>Travel & Tourism</h3>
+                <ul>
+                    <li>Guides</li>
+                    <li>Cultural Insights</li>
+                    <li>Adventure</li>
+                </ul>
+                <div class="travel">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://usercontent1.hubstatic.com/14163320_f1024.jpg" alt="Language & Linguistics">
+                <h3>Language & Linguistics</h3>
+                <ul>
+                    <li>Grammar</li>
+                    <li>Phonetics</li>
+                    <li>Sociolinguistics</li>
+                </ul>
+                <div class="language">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/448/309/large_2x/save-earth-day-poster-environment-day-nature-green-ai-generative-glossy-background-images-tree-and-water-free-photo.jpg" alt="Environmental Science">
+                <h3>Environmental Science</h3>
+                <ul>
+                    <li>Ecology</li>
+                    <li>Conservation</li>
+                    <li>Climate Change</li>
+                </ul>
+                <div class="environment">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?cs=srgb&dl=bread-food-sandwich-1565982.jpg&fm=jpg" alt="Cooking & Culinary Arts">
+                <h3>Cooking & Culinary Arts</h3>
+                <ul>
+                    <li>Baking</li>
+                    <li>World Cuisines</li>
+                    <li>Nutrition</li>
+                </ul>
+                <div class="cook">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Bas_relief_from_Arch_of_Marcus_Aurelius_showing_sacrifice.jpg/1200px-Bas_relief_from_Arch_of_Marcus_Aurelius_showing_sacrifice.jpg" alt="Mythology & Folklore">
+                <h3>Mythology & Folklore</h3>
+                <ul>
+                    <li>Greek Mythology</li>
+                    <li>Indian Epics</li>
+                    <li>World Folklore</li>
+                </ul>
+                <div class="mythology">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://www.selfpublishbooks.ie/wp-content/uploads/2016/04/poetry-pencil.jpg" alt="Poetry">
+                <h3>Poetry</h3>
+                <ul>
+                    <li>Sonnets</li>
+                    <li>Haiku</li>
+                    <li>Narrative Poetry</li>
+                </ul>
+                <div class="poetry">
+                <a href="#">Explore More</a>
+                </div>
+            </div>
+        </div>
+        <button class="arrow right" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+    <script>
+        let currentIndex = 0;
+        
+        function scrollCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
+            const cardWidth = document.querySelector('.card').offsetWidth + 20; 
+            currentIndex += direction;
+            const maxIndex = carousel.children.length - 1;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+        </script>
+        <h2>New Additions</h2>
+        <div class="new-additions">
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/91ePEJyQ22L._SL1500_.jpg" alt="Book 1">
+                <p>The Science of Space</p>
+            </div>
+            <div class="book">
+                <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9780857758491/myths-legends-9780857758491_hr.jpg" alt="Book 2">
+                <p>Myths Legends</p>
+            </div>
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/61fki16RufL._SL1000_.jpg" alt="Book 3">
+                <p>Own the AI Revolution</p>
+            </div>
+            <div class="book">
+                <img src="https://press.uchicago.edu/dam/ucp/books/jacket/978/17/89/38/9781789381177.jpg" alt="Book 4">
+                <p>Art InSight</p>
+            </div>
+            <div class="book">
+                <img src="http://blog.raynatours.com/wp-content/uploads/2015/05/Life-is-a-Trip-by-Judith-Fein.jpg" alt="Book 5">
+                <p>Life is a Trip</p>
+            </div>
+        </div>
+        <div class="na">
+        <button>Browse more</button>
+        </div>
+        
+        <footer>
+            <div class="footpanel">
+             <ul>
+                <p><i class="fa-solid fa-circle-info"> About</p></i>
+                 <a>Disclaimer</a>
+                 <a>Sponsor</a>
+                 <a>Privacy policy</a>
+                 <a>Terms and Conditions</a>
+             </ul>
+             <ul>
+                 <p><i class="fa-solid fa-question"></i> Guidelines</p>
+                 <a>Copyright guides for other Libraries</a>
+                 <a>Insititutional registrations</a>
+                 <a>Sitemap</a>
+                 <a>Branding</a>
+                 <a>Code of conduct</a>
+             </ul>
+             <ul>
+                 <p><i class="fa-solid fa-square-share-nodes"></i> Our Services</p>
+                 <a>Library club</a>
+                 <a>Digital preservation centre</a>
+                 <a>IDR hosting service</a>
+             </ul>
+             <ul>
+                 <p><i class="fa-solid fa-phone"></i> Contact Us</p>
+                 <a>Contact</a>
+                 <a>Feedback</a>  
+             </ul>
+            </div>
+             <div class="copyright">
+                 ©2025 LiteraLink Library Management System. All Rights Reserved.
+             </div>
+         </footer>
+         <script>
+            document.querySelector(".fiction a").onclick = function () {
+                window.location.href = "fiction.html";
+            };
+        </script>
+        <script>
+            // Mapping genres to their corresponding HTML pages
+            const genreMap = {
+                "fiction": "fiction.html",
+                "mathematics": "mathematics.html",
+                "science": "science.html",
+                "history": "history.html",
+                "technology": "technology.html",
+                "psychology": "psychology.html",
+                "business": "business.html",
+                "law": "law.html",
+                "medical sciences": "medical.html",
+                "travel & tourism": "travel.html",
+                "language & linguistics": "language.html",
+                "environmental science": "environment.html",
+                "cooking & culinary arts": "cook.html",
+                "mythology & folklore": "mythology.html",
+                "poetry": "poetry.html"
+            };
+        
+            const searchInput = document.querySelector('.search-input');
+            const searchIcon = document.querySelector('.search-icon');
+        
+            // Handle click on search icon
+            searchIcon.addEventListener('click', () => {
+                const query = searchInput.value.trim().toLowerCase();
+                if (genreMap[query]) {
+                    window.location.href = genreMap[query];
+                } else {
+                    alert("Genre not found. Try something like 'Fiction', 'Science', 'Poetry' etc.");
+                }
+            });
+        
+            // Also allow pressing "Enter" in the input field
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === "Enter") {
+                    searchIcon.click();
+                }
+            });
+        </script>
+        
+      <a href="chat.html" class="bookbot-floating-logo" title="Chat with BookBot">
+        <img src="https://img.freepik.com/premium-vector/robot-icon-chat-bot-sign-support-service-concept-chatbot-character-flat-style_41737-796.jpg?w=2000" alt="BookBot Logo">
+        </a>
+</body>
+</html>

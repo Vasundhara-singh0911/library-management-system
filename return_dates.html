@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Borrowed Books | LiteraLink</title>
+  <style>
+    .header {
+      font-size: 50px;
+      font-style: Roboto;
+      font-weight: 800;
+      height: 100px;
+      width: 100vw;
+      background-color: #101935;
+      color: white;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .header img {
+      height: 100px;
+      width: 100px;
+      margin-right: 900px;
+    }
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .header h1 {
+      color: white;
+      margin-top: 5px;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e1ce7a;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 150px auto;
+      background: #c5baaf;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead {
+      background-color: #3498db;
+      color: white;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+    .status-returned {
+      color: green;
+      font-weight: bold;
+    }
+    .status-overdue {
+      color: red;
+      font-weight: bold;
+    }
+    .status-pending {
+      color: rgb(185, 64, 219);
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead {
+        display: none;
+      }
+      td {
+        padding: 10px;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://appexchange.salesforce.com/partners/servlet/servlet.FileDownload?file=00P3A00000kGyTnUAK">
+    <h1>LiteraLink</h1>
+  </div>
+
+  <div class="container">
+    <h1>Return Dates</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Category</th>
+          <th>Return Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="borrowedBooksBody">
+        <!-- Rows will be added dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 LiteraLink Library Management System. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function formatDate(date) {
+      return date.toISOString().split("T")[0];
+    }
+
+    function getStatus(returnDateStr) {
+      const today = new Date();
+      const returnDate = new Date(returnDateStr);
+
+      if (returnDate < today) return "Overdue";
+      if (returnDate.toDateString() === today.toDateString()) return "Returned";
+      return "Pending";
+    }
+
+    window.onload = function () {
+      const tbody = document.getElementById("borrowedBooksBody");
+      const borrowedBooks = JSON.parse(localStorage.getItem("borrowedBooks")) || [];
+
+      borrowedBooks.forEach(book => {
+        const borrowDate = new Date(book.borrowedOn || new Date());
+        const returnDate = new Date(borrowDate);
+        returnDate.setDate(returnDate.getDate() + parseInt(book.duration || 14)); // default 14 days
+
+        const row = document.createElement("tr");
+
+        const titleTd = document.createElement("td");
+        titleTd.setAttribute("data-label", "Title");
+        titleTd.textContent = book.title;
+
+        const authorTd = document.createElement("td");
+        authorTd.setAttribute("data-label", "Author");
+        authorTd.textContent = book.author;
+
+        const genreTd = document.createElement("td");
+        genreTd.setAttribute("data-label", "Category");
+        genreTd.textContent = book.genre || "Unknown";
+
+        const returnTd = document.createElement("td");
+        returnTd.setAttribute("data-label", "Return Date");
+        const formattedReturnDate = formatDate(returnDate);
+        returnTd.textContent = formattedReturnDate;
+
+        const statusTd = document.createElement("td");
+        statusTd.setAttribute("data-label", "Status");
+        const status = getStatus(formattedReturnDate);
+        statusTd.textContent = status;
+        statusTd.classList.add(`status-${status.toLowerCase()}`);
+
+        row.appendChild(titleTd);
+        row.appendChild(authorTd);
+        row.appendChild(genreTd);
+        row.appendChild(returnTd);
+        row.appendChild(statusTd);
+
+        tbody.appendChild(row);
+      });
+    };
+  </script>
+</body>
+</html>

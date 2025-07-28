@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile | LiteraLink</title>
+  <style>
+    /* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    } */
+    .header{
+        font-size: 50px;
+        font-style: Roboto;
+        font-weight: 800;
+        height:100px ;
+        width:100vw ;
+        background-color:#101935 ;
+        color: white;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        /* padding: 0 20px; */
+        /* gap: 20px; */
+        top: 0;
+        left: 0;
+        margin-bottom: 50px;
+    }
+    .header img{
+        height: 100px;
+        width: 100px;
+        margin-right: 900px;
+    }
+    .header h1{
+        color: white;
+        margin-top: 5px;
+        /* margin-right: 0px; */
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e1ce7a;
+      margin: 0;
+      padding: 0;
+      display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+      max-width: 600px;
+      /* margin: 50px auto; */
+      background: #c5baaf;
+      padding: 10px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      height: 480px;
+      margin-top: 150px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .profile-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 5px 0 5px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    .save-btn {
+      margin-top: 25px;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .save-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .avatar-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #0a0a0a;
+      margin-left: 200px;
+    }
+    footer {
+    background-color: black;  
+    color: white;               
+    text-align: center;         
+    padding: 10px 0;            
+    font-size: 14px;            
+    position: fixed;            
+    bottom: 0;                  
+    width: 100%;                
+    }
+  </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://appexchange.salesforce.com/partners/servlet/servlet.FileDownload?file=00P3A00000kGyTnUAK">
+        <h1>LiteraLink</h1>
+    </div>
+  <div class="container">
+    <!-- <h1>Edit Profile</h1> -->
+    <div class="avatar-container">
+        <h1 class="xyz">Edit Profile</h1>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzBXNuO6PezhC18aYH_2cYtS0I7KbxoKYdwA&s" alt="Profile picture" class="avatar"/>
+    </div>
+    <form class="profile-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+
+      <label for="member-id">Membership ID</label>
+      <input type="text" id="member-id" placeholder="e.g. LTR12345" />
+
+      <label for="join-date">Joined Date</label>
+      <input type="text" id="join-date" placeholder="e.g. March 2023" />
+
+      <button type="submit" class="save-btn">Save</button>
+    </form>
+  </div>
+  <footer>
+    <p>&copy; 2025 LiteraLink Library Management System. All Rights Reserved.</p>
+</footer>
+ 
+<script>
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const memberIdInput = document.getElementById("member-id");
+  const joinDateInput = document.getElementById("join-date");
+  const form = document.querySelector(".profile-form");
+
+  // Load saved data on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    nameInput.value = localStorage.getItem("profile_name") || "";
+    emailInput.value = localStorage.getItem("profile_email") || "";
+    memberIdInput.value = localStorage.getItem("profile_member_id") || "";
+    joinDateInput.value = localStorage.getItem("profile_join_date") || "";
+  });
+
+  // Save data on form submit
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevent actual form submission
+
+    localStorage.setItem("profile_name", nameInput.value);
+    localStorage.setItem("profile_email", emailInput.value);
+    localStorage.setItem("profile_member_id", memberIdInput.value);
+    localStorage.setItem("profile_join_date", joinDateInput.value);
+
+    alert("Profile saved successfully! ✅");
+  });
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Borrowed Books | LiteraLink</title>
+  <style>
+    .header {
+      font-size: 50px;
+      font-style: Roboto;
+      font-weight: 800;
+      height: 100px;
+      width: 100vw;
+      background-color: #101935;
+      color: white;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .header img {
+      height: 100px;
+      width: 100px;
+      margin-right: 900px;
+    }
+
+    .header h1 {
+      color: white;
+      margin-top: 5px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e1ce7a;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 150px auto;
+      background: #c5baaf;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: #3498db;
+      color: white;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      td {
+        padding: 10px;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://appexchange.salesforce.com/partners/servlet/servlet.FileDownload?file=00P3A00000kGyTnUAK">
+    <h1>LiteraLink</h1>
+  </div>
+
+  <div class="container">
+    <h1>Borrowed Books History</h1>
+    <table id="borrowed-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be added dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 LiteraLink Library Management System. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const borrowedBooks = JSON.parse(localStorage.getItem("borrowedBooks")) || [];
+    const tableBody = document.querySelector("#borrowed-table tbody");
+
+    if (borrowedBooks.length === 0) {
+      const row = tableBody.insertRow();
+      const cell = row.insertCell();
+      cell.colSpan = 3;
+      cell.textContent = "No books borrowed yet.";
+      cell.style.textAlign = "center";
+    } else {
+      borrowedBooks.forEach(book => {
+        const row = tableBody.insertRow();
+        const titleCell = row.insertCell();
+        titleCell.textContent = book.title;
+        titleCell.setAttribute("data-label", "Title");
+
+        const authorCell = row.insertCell();
+        authorCell.textContent = book.author;
+        authorCell.setAttribute("data-label", "Author");
+
+        const genreCell = row.insertCell();
+        genreCell.textContent = book.genre;
+        genreCell.setAttribute("data-label", "Category");
+      });
+    }
+  </script>
+</body>
+</html>

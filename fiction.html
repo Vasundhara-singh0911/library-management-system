@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fiction</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="fiction.css">
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <img src="https://appexchange.salesforce.com/partners/servlet/servlet.FileDownload?file=00P3A00000kGyTnUAK">
+                <div class="nav-search">
+                    <input placeholder="Search Books" class="search-input">
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <h1>LiteraLink</h1>
+            </div>
+        </header>
+        <div class="sidebar">
+            <div class="logo">MY LIBRARY</div>
+            <nav>
+                <ul>
+                    <li><a href="user_home.html">Home</a></li>
+                    <li><a href="#">Favorites</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">User Profile</a></li>
+                    <li><a href="user_sign_in.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h1>Fiction</h1>
+
+            <div class="book-container">
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQH57crlPcXwmI4Ol9CCLAS73SlvoNKSwSOJCiKUu6fzP712bWK9d_2HZSyMFU0JLW_59g3jXosNXA99tng6U_xsvUXh_XE9L-wPLx9MWE&usqp=CAE" alt="Book 1">
+                    </div>
+                    <p class="book-title">A Season of Light</p>
+                    <button class="borrow-btn" onclick='borrowBook({
+    "title": "A Season of Light",
+    "author": "Author Name",
+    "description": "A novel about all the choices that go into a life well lived.",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQH57crlPcXwmI4Ol9CCLAS73SlvoNKSwSOJCiKUu6fzP712bWK9d_2HZSyMFU0JLW_59g3jXosNXA99tng6U_xsvUXh_XE9L-wPLx9MWE&usqp=CAE"
+})'>Borrow</button>
+                </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ_wIdBr-8R0SNCJ8ooWCrbqisR6tuPzae6_tE11zbWdwz1m_vW1aP6dLIXElsN7vf-V_pTXUY5QniD5-DvVJojZRnRtS7SywFkeAJElZ2jTJ8yQZOKoB3u&usqp=CAE" alt="Book 2">
+                    </div>
+                    <p class="book-title">Powerful</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "Powerful",
+                        "author": "Author Name",
+                        "description": "A gripping story about strength and overcoming challenges.",
+                        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ_wIdBr-8R0SNCJ8ooWCrbqisR6tuPzae6_tE11zbWdwz1m_vW1aP6dLIXElsN7vf-V_pTXUY5QniD5-DvVJojZRnRtS7SywFkeAJElZ2jTJ8yQZOKoB3u&usqp=CAE"
+                    })'>Borrow</button>
+                </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRKACu31o4I6zxEKsYjRwoQjysuviWFS-KB58HINA_MdQBm8eR5pXxS7Ui5nmQIQ2UZxnZWHuxDkGSthBFyLEpNVP6n2e-pPJfAcTcTm6s6&usqp=CAE" alt="Book 3">
+                    </div>
+                    <p class="book-title">Days at the Morisaki Bookshop</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "Days at the Morisaki Bookshop",
+                        "author": "Author Name",
+                        "description": "A heartwarming tale set in a unique bookshop in Tokyo.",
+                        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRKACu31o4I6zxEKsYjRwoQjysuviWFS-KB58HINA_MdQBm8eR5pXxS7Ui5nmQIQ2UZxnZWHuxDkGSthBFyLEpNVP6n2e-pPJfAcTcTm6s6&usqp=CAE"
+                    })'>Borrow</button>
+                                    </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQXfAydsXCnT8oBpMYaKDYaQeMreNZ0j-sKrOHEcIc3ywgEG7fJlXQUOfGOMloMdrjgl7j83I0qdyLAQweS1RLRbzdWELrrqJuNS2TIFiQArVsCh2nKXSeXQQ&usqp=CAE" alt="Book 4">
+                    </div>
+                    <p class="book-title">Animal Farm</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "Animal Farm",
+                        "author": "George Orwell",
+                        "description": "A satire of totalitarianism, focusing on farm animals.",
+                        "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQXfAydsXCnT8oBpMYaKDYaQeMreNZ0j-sKrOHEcIc3ywgEG7fJlXQUOfGOMloMdrjgl7j83I0qdyLAQweS1RLRbzdWELrrqJuNS2TIFiQArVsCh2nKXSeXQQ&usqp=CAE"
+                    })'>Borrow</button>
+                                    </div>
+            </div>
+
+            <div class="book-container">
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSSGCCHN1_hjRypl-XKOW-qA72KVg7GNqUdEjQmPIYBJk5khoyEkcSa4lLLOpMO-dTbcbVEd-EI2lImXe26MErI5QYLVZ0qgYq7GVqiBoSnrJQcnXbQFIl0KA&usqp=CAE" alt="Book 1">
+                    </div>
+                    <p class="book-title">The Last Devil to Die</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "The Last Devil to Die",
+                        "author": "Author Name",
+                        "description": "A thrilling crime novel that keeps you on the edge of your seat.",
+                        "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSSGCCHN1_hjRypl-XKOW-qA72KVg7GNqUdEjQmPIYBJk5khoyEkcSa4lLLOpMO-dTbcbVEd-EI2lImXe26MErI5QYLVZ0qgYq7GVqiBoSnrJQcnXbQFIl0KA&usqp=CAE"
+                    })'>Borrow</button>
+                                    </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSBNXK4sfrIZ28XZ9OmUOfL5PlQUXrbZ6pLHS3QwNlq03amMTpkT5nyd31KKXegynKKFYMqe3bLKSAXSQXc-MLty8sCyAOgUON5tKzj2Cqd98YJKA3eRly8&usqp=CAE" alt="Book 2">
+                    </div>
+                    <p class="book-title">Fly Away</p>
+                    <button class="borrow-btn" onclick='borrowBook({
+                        "title": "Fly Away",
+                        "author": "Author Name",
+                        "description": "A story of hope and resilience in the face of adversity.",
+                        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSBNXK4sfrIZ28XZ9OmUOfL5PlQUXrbZ6pLHS3QwNlq03amMTpkT5nyd31KKXegynKKFYMqe3bLKSAXSQXc-MLty8sCyAOgUON5tKzj2Cqd98YJKA3eRly8&usqp=CAE"
+                    })'>Borrow</button>                </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTIxF8rNLv58BVLMZ5WV5SQAKjAC_E-cEgo0Z6q2x9WyZTotbuaKKCBNy5U0hZ5Muk6xHiqTeTigRaJG-p93lvaCW3EPsL3TrZMl-MSs8UObaJ6AWbMmB_t&usqp=CAE" alt="Book 3">
+                    </div>
+                    <p class="book-title">Catching Fire</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "Catching Fire",
+                        "author": "Suzanne Collins",
+                        "description": "The second book in the Hunger Games series, filled with suspense and action.",
+                        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTIxF8rNLv58BVLMZ5WV5SQAKjAC_E-cEgo0Z6q2x9WyZTotbuaKKCBNy5U0hZ5Muk6xHiqTeTigRaJG-p93lvaCW3EPsL3TrZMl-MSs8UObaJ6AWbMmB_t&usqp=CAE"
+                    })'>Borrow</button>                </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRWu9jtMKRLEbrFHJGsQh4O-cPwZsNXsmLo0hKkeVeZ5wRJH0cMuY5qEcr7EILXwvLNYVsJffjCosHUQKNq1-hZnGvoXBPfcDjQ89lS_PMollOCd_X2JNjIcg&usqp=CAE" alt="Book 4">
+                    </div>
+                    <p class="book-title">The Hawthrorne Legacy</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "The Hawthorne Legacy",
+                        "author": "Jennifer Lynn Barnes",
+                        "description": "A fast-paced mystery filled with twists and turns.",
+                        "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRWu9jtMKRLEbrFHJGsQh4O-cPwZsNXsmLo0hKkeVeZ5wRJH0cMuY5qEcr7EILXwvLNYVsJffjCosHUQKNq1-hZnGvoXBPfcDjQ89lS_PMollOCd_X2JNjIcg&usqp=CAE"
+                    })'>Borrow</button>                </div>
+            </div>
+
+            <div class="book-container">
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRanEDKjEMr4Ts_iS_JcQSGsg-FyKRs0rJ-yqMBNn1BX_TxcvHnpR4hFq_hCCfJHz-Pq5f6UWMbUG_RwpF7AqBLWKSeeUBmNoNg-MHLNB9qqHzC8Iw-Wmev&usqp=CAE" alt="Book 1">
+                    </div>
+                    <p class="book-title">The Book Thief</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "The Book Thief",
+                        "author": "Markus Zusak",
+                        "description": "A story of a young girl’s survival during WWII, told by Death.",
+                        "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRanEDKjEMr4Ts_iS_JcQSGsg-FyKRs0rJ-yqMBNn1BX_TxcvHnpR4hFq_hCCfJHz-Pq5f6UWMbUG_RwpF7AqBLWKSeeUBmNoNg-MHLNB9qqHzC8Iw-Wmev&usqp=CAE"
+                    })'>Borrow</button>                </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRn1J6TULgiP750Ejia6yT1HaKMaeeNjh6cyR0RtSPHCILP6ccrzhUFUzSKmmBEoE0L2a1J-APqDY95GESXPA4No1Scfc9xmfDBwFfWHFKEq7F0FUToplo6&usqp=CAE" alt="Book 2">
+                    </div>
+                    <p class="book-title">A Court Of Wings And Ruin</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "A Court of Wings and Ruin",
+                        "author": "Sarah J. Maas",
+                        "description": "The third book in the ACOTAR series, filled with magic, betrayal, and action.",
+                        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRn1J6TULgiP750Ejia6yT1HaKMaeeNjh6cyR0RtSPHCILP6ccrzhUFUzSKmmBEoE0L2a1J-APqDY95GESXPA4No1Scfc9xmfDBwFfWHFKEq7F0FUToplo6&usqp=CAE"
+                    })'>Borrow</button>                </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTGSXMBYxjseKI9yOBZs7rea7chL0Fr0tie-stoKkLILoWIlrqAtubBnEX1ipuQpo8sdzn7waYHuvh0LOwEATOuamlqTwOyWnI-1mHrX7Md&usqp=CAE" alt="Book 3">
+                    </div>
+                    <p class="book-title">The Starless Sea</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "The Starless Sea",
+                        "author": "Erin Morgenstern",
+                        "description": "A magical, labyrinthine tale that defies genres.",
+                        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTGSXMBYxjseKI9yOBZs7rea7chL0Fr0tie-stoKkLILoWIlrqAtubBnEX1ipuQpo8sdzn7waYHuvh0LOwEATOuamlqTwOyWnI-1mHrX7Md&usqp=CAE"
+                    })'>Borrow</button>                </div>
+        
+                <div class="book-wrapper">
+                    <div class="book">
+                        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJ8KVhcIcyLUhFq1fOwP3KkXfYiArYGLdmhN40uxt4iu3VTKyo0VYl_Ogd0U-yforWTf9N7VqBoN2Md_MEjEnOe8eY5J5CR9FowL3zfhyI&usqp=CAE" alt="Book 4">
+                    </div>
+                    <p class="book-title">The Midnight Library</p>
+                    <button class="borrow-btn"  onclick='borrowBook({
+                        "title": "The Midnight Library",
+                        "author": "Matt Haig",
+                        "description": "A novel that explores the endless possibilities of life through a magical library.",
+                        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJ8KVhcIcyLUhFq1fOwP3KkXfYiArYGLdmhN40uxt4iu3VTKyo0VYl_Ogd0U-yforWTf9N7VqBoN2Md_MEjEnOe8eY5J5CR9FowL3zfhyI&usqp=CAE"
+                    })'>Borrow</button>                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2025 LiteraLink Library Management System. All Rights Reserved.</p>
+        </footer> 
+        <script>
+            
+function borrowBook(book) {
+    localStorage.setItem("selectedBook", JSON.stringify(book));
+    window.location.href = "borr_book1.html";  
+}
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.querySelector(".search-input");
+    
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.trim().toLowerCase();
+    
+        const allWrappers = document.querySelectorAll(".book-wrapper");
+        let anyVisible = false;
+    
+        allWrappers.forEach(wrapper => {
+          const title = wrapper.querySelector(".book-title").textContent.toLowerCase();
+    
+          if (title.includes(query)) {
+            wrapper.style.display = "flex"; 
+            anyVisible = true;
+          } else {
+            wrapper.style.display = "none";
+          }
+        });
+      });
+    });
+    </script>
+    
+    
+        
+    </body>
+    </html>   

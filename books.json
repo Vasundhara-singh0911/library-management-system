@@ -1,0 +1,29 @@
+[
+    { "title": "A Season of Light", "genre": "Romance", "count": 3 },
+    { "title": "Powerful", "genre": "Self-help", "count": 2 },
+    { "title": "Days at the Morisaki Bookshop", "genre": "Contemporary Fiction", "count": 4 },
+    { "title": "Animal Farm", "genre": "Political Satire", "count": 5 },
+    { "title": "The Last Devil to Die", "genre": "Mystery", "count": 2 },
+    { "title": "Fly Away", "genre": "Drama", "count": 3 },
+    { "title": "Catching Fire", "genre": "Dystopian", "count": 4 },
+    { "title": "The Hawthorne Legacy", "genre": "Thriller", "count": 2 },
+    { "title": "The Book Thief", "genre": "Historical Fiction", "count": 3 },
+    { "title": "A Court of Wings and Ruin", "genre": "Fantasy", "count": 2 },
+    { "title": "The Starless Sea", "genre": "Fantasy", "count": 3 },
+    { "title": "The Midnight Library", "genre": "Fiction", "count": 4 },
+  
+    { "title": "Essentials of Information Technology", "genre": "Technology", "count": 3 },
+    { "title": "The Innovation Biome", "genre": "Technology", "count": 3 },
+    { "title": "The Rise of the Robots", "genre": "Technology", "count": 3 },
+    { "title": "ML and Generative AI for marketing", "genre": "Technology", "count": 3 },
+    { "title": "Introduction to AI", "genre": "Technology", "count": 3 },
+    { "title": "Emerging IT/ICT and AI technologies", "genre": "Technology", "count": 3 },
+    { "title": "Book 3", "genre": "Technology", "count": 3 },
+    { "title": "The Thinking Machine", "genre": "Technology", "count": 3 },
+    { "title": "Electronics Process Technology", "genre": "Technology", "count": 3 },
+    { "title": "The NVIDIA WAY", "genre": "Technology", "count": 3 },
+    { "title": "The Innovators", "genre": "Technology", "count": 3 },
+    { "title": "Modern Technology failures", "genre": "Technology", "count": 3 },
+    { "title": "Handbook of media technology", "genre": "Technology", "count": 3 }
+]
+  

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Borrow Book 1</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="borr_book1.css"/>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <img src="https://appexchange.salesforce.com/partners/servlet/servlet.FileDownload?file=00P3A00000kGyTnUAK">
+      <h1>LiteraLink</h1>
+    </div>
+  </header>
+
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <li><h1>MY ACTIVITY</h1></li>
+        <li><a href="user_home.html">Home</a></li>
+        <li><a href="fiction.html">Back to previous page</a></li>
+        <li><a href="#">User Profile</a></li>
+        <li><a href="user_sign_in.html">Log out</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content">
+    <div class="book-detail">
+      <img id="book-img" src="" alt="Book Image">
+      <p><strong>Title:</strong> <span id="book-title"></span></p>
+      <p><strong>Author:</strong> <span id="book-author"></span></p>
+      <p><strong>Description:</strong> <span id="book-description"></span></p>
+      <p><strong>Availability:</strong> <span style="color: green;">In Stock</span></p>
+
+      <label for="duration">Choose Borrow Duration:</label>
+      <select id="duration">
+        <option value="7">7 Days</option>
+        <option value="14">14 Days</option>
+        <option value="30">30 Days</option>
+      </select>
+
+      <div class="buttons">
+        <button class="borrow-btn" onclick="confirmBorrow()">Confirm Borrow</button>
+        <button class="cancel-btn" onclick="window.history.back()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Recommendation Modal -->
+  <div id="popup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <h2>📚 Book Borrowed!</h2>
+      <p>You borrowed <strong id="popup-book-title"></strong>.</p>
+      <p>You might also like:</p>
+      <ul id="suggestions">
+        <!-- Recommended books will be added dynamically here -->
+      </ul>
+      <button id="close" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    let currentBook = {};
+    let books = [];
+
+    window.onload = async function () {
+      // Load selected book
+      const storedBook = localStorage.getItem("selectedBook");
+      if (storedBook) {
+        currentBook = JSON.parse(storedBook);
+
+        document.getElementById("book-img").src = currentBook.image;
+        document.getElementById("book-title").textContent = currentBook.title;
+        document.getElementById("book-author").textContent = currentBook.author;
+        document.getElementById("book-description").textContent = currentBook.description;
+      } else {
+        alert("No book selected.");
+        window.location.href = "user_home.html";
+        return;
+      }
+
+      // Fetch books.json
+      try {
+        const response = await fetch("books.json");
+        if (!response.ok) throw new Error("Failed to load books.json");
+        books = await response.json();
+      } catch (err) {
+        console.error("Error loading books.json:", err);
+      }
+    };
+
+    function confirmBorrow() {
+  const duration = parseInt(document.getElementById("duration").value);
+  const returnDate = new Date();
+  returnDate.setDate(returnDate.getDate() + duration);
+  const formattedReturnDate = returnDate.toISOString().split("T")[0];
+
+  const suggestions = getSuggestions(currentBook.title);
+
+  let borrowedBooks = JSON.parse(localStorage.getItem("borrowedBooks")) || [];
+  borrowedBooks.push({
+    title: currentBook.title,
+    author: currentBook.author,
+    genre: currentBook.genre || "Unknown",
+    returnDate: formattedReturnDate,
+    status: "Pending"
+  });
+  localStorage.setItem("borrowedBooks", JSON.stringify(borrowedBooks));
+
+  document.querySelector("#popup-book-title").textContent = currentBook.title;
+  const suggestionList = document.getElementById("suggestions");
+  suggestionList.innerHTML = "";
+
+  suggestions.forEach(book => {
+    const li = document.createElement("li");
+    li.textContent = `📘 ${book.title}`;
+    suggestionList.appendChild(li);
+  });
+
+  document.getElementById("popup").style.display = "flex";
+}
+
+    function getSuggestions(currentTitle) {
+      const index = books.findIndex(b => b.title === currentTitle);
+      if (index === -1) return [];
+      return books.slice(index + 1, index + 3);
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2025 LiteraLink Library Management System. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
